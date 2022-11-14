@@ -21,3 +21,4 @@ runs:
     - run: cat tags.txt
       shell: bash
     - run: node calc.js
+      shell: bash
