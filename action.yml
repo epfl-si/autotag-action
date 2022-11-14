@@ -16,5 +16,7 @@ description: 'Autotag'
 runs:
   using: "composite"
   steps:
-    - run: git log
+    - run: git log > tags.txt
+      shell: bash
+    - run: cat tags.txt
       shell: bash
