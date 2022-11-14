@@ -1,13 +1,32 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
-runs:
-  using: 'node16'
-  main: 'dist/index.js'
+#name: 'Hello World'
+#description: 'Greet someone and record the time'
+#inputs:
+#  who-to-greet:  # id of input
+#    description: 'Who to greet'
+#    required: true
+#    default: 'World'
+#outputs:
+#  time: # id of output
+#    description: 'The time we greeted you'
+#runs:
+#  using: 'node16'
+#  main: 'dist/index.js'
+name: autotag
+
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  pull_request:
+
+jobs:
+  setup:
+    name: Code setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: list tags
+        run: git tag
