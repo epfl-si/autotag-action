@@ -16,5 +16,5 @@ description: 'Autotag'
 runs:
   using: "composite"
   steps:
-    - run: ./main.sh
+    - run: git log
       shell: bash
