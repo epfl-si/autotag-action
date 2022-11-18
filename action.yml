@@ -7,7 +7,7 @@ runs:
     - run: git log --pretty=oneline > ${{ github.action_path }}/git_log.txt
       shell: bash
     # get latest tag
-    - run: git describe --tags --abbrev=0 > ${{ github.action_path }}/git tag.txt
+    - run: git describe --tags --abbrev=0 > ${{ github.action_path }}/git_tag.txt
       shell: bash
     - run: cat ${{ github.action_path }}/git_log.txt
       shell: bash
