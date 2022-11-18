@@ -1,23 +1,9 @@
-# Hello world javascript action
+# Autotag action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
-
-## Inputs
-
-### `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
-
-## Outputs
-
-### `time`
-
-The time we greeted you.
+This action autotags a repository depending on commit messages starting with "#major:", "#minor:", "#patch:".
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@v1.1
-with:
-  who-to-greet: 'Mona the Octocat'
+uses: epfl-si/autotag-action@1.0
 ```
