@@ -36,6 +36,14 @@ try {
         var found = message.match(tagRegex);
         //console.log('message: ', message);
 
+        // tag found, extract it and stop processing
+        if (found) {
+            found = found[0];
+            tag = found.replace('(tag: refs/tags/', '').replace(')', '');
+            console.log('found tag: ', tag);
+            throw BreakException;
+        }
+
         // actions processing
         if (message.indexOf('#major') > -1) {
             actions.push('major');
@@ -45,14 +53,6 @@ try {
         }
         else if (message.indexOf('#patch') > -1) {
             actions.push('patch');
-        }
-
-        // tag found, extract it and stop processing
-        if (found) {
-            found = found[0];
-            tag = found.replace('(tag: refs/tags/', '').replace(')', '');
-            console.log('found tag: ', tag);
-            throw BreakException;
         }
     });
 } catch (e) {
