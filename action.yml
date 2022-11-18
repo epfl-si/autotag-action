@@ -4,6 +4,8 @@ runs:
   using: "composite"
   steps:
     # get logs in compact form to extract the #major, #minor, #patch labels
+    - run: git log --decorate=full --pretty=oneline
+      shell: bash
     - run: git log --pretty=oneline >  git_log.txt
       shell: bash
     # get latest tag
