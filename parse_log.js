@@ -2,9 +2,19 @@ const fs = require('fs');
 
 var BreakException = {};
 
+// read tag file to get the latest one
+var tag = '';
+const tags = fs.readFileSync('git_tag.txt', 'utf-8');
+tags.split(/\r?\n/).forEach((line) => {
+    tag = line;
+});
+
+console.log("latest tag:", tag);
+
+// read logs
 const logs = fs.readFileSync('git_log.txt', 'utf-8');
 
-var tag = '';
+
 const tagRegex = /^\(tag: \d\.\d\.\d\)/g;
 
 var actions = [];
