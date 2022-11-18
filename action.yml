@@ -4,12 +4,7 @@ runs:
   using: "composite"
   steps:
     # get logs in compact form to extract the #major, #minor, #patch labels
-    - run: git log --decorate=full --pretty=oneline
-      shell: bash
-    - run: git log --pretty=oneline >  git_log.txt
-      shell: bash
-    # get latest tag
-    - run: git describe --tags --abbrev=0 > git_tag.txt
+    - run: git log --decorate=full --pretty=oneline >  git_log.txt
       shell: bash
     # calculate next tag
     - run: node ${{ github.action_path }}/parse_log.js

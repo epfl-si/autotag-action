@@ -1,6 +1,7 @@
-f9198a2daac4410153ffa59d2a682b21bc6bfc92 (HEAD -> master, origin/master) update action checkout
+41dd521477b9284607df9e2fe5f75f1c46b22e8b (HEAD -> refs/heads/master, refs/remotes/origin/master) update time
+f9198a2daac4410153ffa59d2a682b21bc6bfc92 update action checkout
 dfa74b2bab255fd8214b847de3606ce6819aaad2 #patch: add time
-7473c1cdeee82f65b4d71f387081651e1bb85fba (tag: 1.0.0) fix version
+7473c1cdeee82f65b4d71f387081651e1bb85fba (tag: refs/tags/1.0.0) fix version
 3a0164032fdf0bfadf963ae6852d41cbca53d73f toto
 e153d4b04e023c36b1c1648ea6d6c51181ebf746 update
 c4c2c1ea70455eb121dfa9454547823aec0f2cc5 Revert "remove tag"

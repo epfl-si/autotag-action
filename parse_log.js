@@ -3,6 +3,7 @@ const fs = require('fs');
 var BreakException = {};
 
 // read tag file to get the latest one
+/*
 var tag = '';
 const tags = fs.readFileSync('git_tag.txt', 'utf-8');
 
@@ -17,11 +18,12 @@ try {
 }
 
 console.log("latest tag:", tag);
+*/
 
 // read logs
 const logs = fs.readFileSync('git_log.txt', 'utf-8');
 
-const tagRegex = /^\(tag: \d\.\d\.\d\)/g;
+const tagRegex = /^\(tag: refs\/tags\/\d\.\d\.\d\)/g;
 
 var actions = [];
 
@@ -48,7 +50,7 @@ try {
         // tag found, extract it and stop processing
         if (found) {
             found = found[0];
-            tag = found.replace('(tag: ', '').replace(')', '');
+            tag = found.replace('(tag: refs/tags/', '').replace(')', '');
             console.log('found tag: ', tag);
             throw BreakException;
         }
