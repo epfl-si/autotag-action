@@ -70,9 +70,12 @@ if (actions.length > 0) {
     actions.forEach((action) => {
         if (action == 'major') {
             semver[0]++;
+            semver[1] = 0;
+            semver[2] = 0;
         }
         else if (action == 'minor') {
             semver[1]++;
+            semver[2] = 0;
         }
         else if (action == 'patch') {
             semver[2]++;
