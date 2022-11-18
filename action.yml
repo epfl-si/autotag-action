@@ -6,16 +6,10 @@ runs:
     # get logs in compact form to extract the #major, #minor, #patch labels
     - run: git log --pretty=oneline >  git_log.txt
       shell: bash
-    - run: cat git_log.txt
-      shell: bash
     # get latest tag
     - run: git describe --tags --abbrev=0 > git_tag.txt
       shell: bash
-    - run: cat git_tag.txt
-      shell: bash
-    - run: git tag
-      shell: bash
-    # calculate nex tag
+    # calculate next tag
     - run: node ${{ github.action_path }}/parse_log.js
       shell: bash
     # apply new tag

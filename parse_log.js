@@ -8,7 +8,7 @@ const tags = fs.readFileSync('git_tag.txt', 'utf-8');
 
 try {
     tags.split(/\r?\n/).forEach((line) => {
-        console.log("tag in git_tag.txt: ", line);
+        //console.log("tag in git_tag.txt: ", line);
         tag = line;
         throw BreakException;
     });
@@ -20,7 +20,6 @@ console.log("latest tag:", tag);
 
 // read logs
 const logs = fs.readFileSync('git_log.txt', 'utf-8');
-
 
 const tagRegex = /^\(tag: \d\.\d\.\d\)/g;
 
