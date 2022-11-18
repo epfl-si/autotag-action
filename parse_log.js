@@ -5,9 +5,16 @@ var BreakException = {};
 // read tag file to get the latest one
 var tag = '';
 const tags = fs.readFileSync('git_tag.txt', 'utf-8');
-tags.split(/\r?\n/).forEach((line) => {
-    tag = line;
-});
+
+try {
+    tags.split(/\r?\n/).forEach((line) => {
+        console.log("tag in git_tag.txt: ", line);
+        tag = line;
+        throw BreakException;
+    });
+} catch (e) {
+  if (e !== BreakException) throw e;
+}
 
 console.log("latest tag:", tag);
 
