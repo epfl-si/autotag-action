@@ -92,4 +92,10 @@ if (actions.length > 0) {
             console.error(err);
         }
     });
+
+    fs.writeFile('newtag.txt', 'newtag='+newtag, err => {
+        if (err) {
+            console.error(err);
+        }
+    });
 }

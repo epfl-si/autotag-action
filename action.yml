@@ -1,16 +1,25 @@
 name: 'Hello World'
 description: 'Autotag'
+outputs:
+  newtag:
+    description: "New tag generated"
+    value: ${{ steps.output-newtag.outputs.newtag }}
 runs:
   using: "composite"
   steps:
-    # dummy file
+    # dummy files
     - run: touch commands.txt
+      shell: bash
+    - run: echo "none" > newtag.txt
       shell: bash
     # get logs in compact form to extract the #major, #minor, #patch labels
     - run: git log --decorate=full --pretty=oneline >  git_log.txt
       shell: bash
     # calculate next tag
     - run: node ${{ github.action_path }}/parse_log.js
+      shell: bash
+    - run: cat newtag.txt >> $GITHUB_OUTPUT
+      id: output-newtag
       shell: bash
     # apply new tag
     - run: bash commands.txt
