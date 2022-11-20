@@ -10,7 +10,7 @@ runs:
     # dummy files
     - run: touch commands.txt
       shell: bash
-    - run: echo "none" > newtag.txt
+    - run: echo "newtag=none" > newtag.txt
       shell: bash
     # get logs in compact form to extract the #major, #minor, #patch labels
     - run: git log --decorate=full --pretty=oneline >  git_log.txt
