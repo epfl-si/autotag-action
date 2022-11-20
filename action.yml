@@ -5,6 +5,7 @@ runs:
   steps:
     # dummy file
     - run: touch commands.txt
+      shell: bash
     # get logs in compact form to extract the #major, #minor, #patch labels
     - run: git log --decorate=full --pretty=oneline >  git_log.txt
       shell: bash
