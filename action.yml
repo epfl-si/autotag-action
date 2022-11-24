@@ -27,6 +27,7 @@ runs:
       id: output-newtag
       shell: bash
     - run: echo $INPUT_DOIT
+      shell: bash
     # apply new tag
     - run: bash commands.txt
       shell: bash
