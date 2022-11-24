@@ -26,7 +26,7 @@ runs:
     - run: cat newtag.txt >> $GITHUB_OUTPUT
       id: output-newtag
       shell: bash
-    - run: echo env
+    - run: env
       shell: bash
     # apply new tag
     - run: bash commands.txt
