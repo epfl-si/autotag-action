@@ -5,6 +5,10 @@ inputs:
     description: 'Wheather to really to the tagging or not, just to obtain the tag to be applied but not applying it'
     required: false
     default: true
+  branch:
+    description: 'Branch name'
+    required: false
+    default: 'master'
 outputs:
   newtag:
     description: "New tag generated"
@@ -26,6 +30,10 @@ runs:
     - run: cat newtag.txt >> $GITHUB_OUTPUT
       id: output-newtag
       shell: bash
+    - run: |
+        sed 's/@@BRANCH/'${{ inputs.branch }}'/' commands.txt > /tmp/commands.txt
+        mv /tmp/commands.txt commands.txt
+        cat commands.txt
     # apply new tag
     - run: bash commands.txt
       shell: bash
