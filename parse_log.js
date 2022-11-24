@@ -87,7 +87,7 @@ if (actions.length > 0) {
     console.log('newtag: ', newtag);
 
     // write command to execute file
-    fs.writeFile('commands.txt', 'git tag '+newtag+';git push origin master --tags', err => {
+    fs.writeFile('commands.txt', 'git tag '+newtag+';git push origin @@BRANCH --tags', err => {
         if (err) {
             console.error(err);
         }
