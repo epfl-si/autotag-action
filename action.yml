@@ -26,7 +26,8 @@ runs:
     - run: cat newtag.txt >> $GITHUB_OUTPUT
       id: output-newtag
       shell: bash
+    - run: echo $INPUT_DOIT
     # apply new tag
     - run: bash commands.txt
       shell: bash
-      if: github.event.inputs.doit
+      if: $INPUT_DOIT == true
