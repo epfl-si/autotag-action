@@ -26,8 +26,6 @@ runs:
     - run: cat newtag.txt >> $GITHUB_OUTPUT
       id: output-newtag
       shell: bash
-    - run: echo ${{ inputs.doit }}
-      shell: bash
     # apply new tag
     - run: bash commands.txt
       shell: bash
