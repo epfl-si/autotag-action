@@ -34,6 +34,7 @@ runs:
         sed 's/@@BRANCH/'${{ inputs.branch }}'/' commands.txt > /tmp/commands.txt
         mv /tmp/commands.txt commands.txt
         cat commands.txt
+      shell: bash
     # apply new tag
     - run: bash commands.txt
       shell: bash
