@@ -1,5 +1,10 @@
-name: 'Hello World'
-description: 'Autotag'
+name: 'Autotag'
+description: 'Autotag repository based on #major, #minor, #patch commit messages'
+inputs:
+  doit:  # id of input
+    description: 'Wheather to really to the tagging or not, just to obtain the tag to be applied but not applying it'
+    required: false
+    default: true
 outputs:
   newtag:
     description: "New tag generated"
@@ -24,3 +29,4 @@ runs:
     # apply new tag
     - run: bash commands.txt
       shell: bash
+      if: github.event.inputs.doit
