@@ -23,7 +23,7 @@ console.log("latest tag:", tag);
 // read logs
 const logs = fs.readFileSync('git_log.txt', 'utf-8');
 
-const tagRegex = /^\(tag: refs\/tags\/\d\.\d\.\d\)/g;
+const tagRegex = /^\(tag: refs\/tags\/\d+\.\d+\.\d+\)/g;
 
 var actions = [];
 

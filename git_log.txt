@@ -1,9 +1,52 @@
-41dd521477b9284607df9e2fe5f75f1c46b22e8b (HEAD -> refs/heads/master, refs/remotes/origin/master) update time
-f9198a2daac4410153ffa59d2a682b21bc6bfc92 update action checkout
-dfa74b2bab255fd8214b847de3606ce6819aaad2 #patch: add time
-7473c1cdeee82f65b4d71f387081651e1bb85fba (tag: refs/tags/1.0.0) fix version
-3a0164032fdf0bfadf963ae6852d41cbca53d73f toto
-e153d4b04e023c36b1c1648ea6d6c51181ebf746 update
-c4c2c1ea70455eb121dfa9454547823aec0f2cc5 Revert "remove tag"
-9373a23f8b7ecd0467ecb068f2fd7257cc681ba7 remove tag
-9ecc880d4ffb7ea17f81f46ea4707309d815d144 add action
+2c28715eba1d0573af3fd5637c6ebf7ecf5d84c0 (HEAD -> refs/heads/main, refs/remotes/origin/main, refs/remotes/origin/HEAD) update tequila submodules
+04506112303062c678987ce9c63bbe8a559b0c6a update submodules
+b810b6c2bde2329fe9ab56cde5cc7b69e19e485d stop reading tags from commit message, this is embeded in common-lib's commit, just need to do submodule update
+411f5051a8d3132993c82e71790a4bf137dcf2fb (tag: refs/tags/0.10.0) #minor: manual release, cadi-libs: 1.1.0, accred-libs: 3.3.0, tequila-epfl: 1.0.0, tequila-perl-client: 1.0.0
+e66a0bda73c584da2ddd6a1411db256f96480dc0 set master as default tag
+50264017209c45772a7d3486c968addc685fc412 add missing requires
+aec84ec89915fcacf6eee64f306aeddb2aeb2bc8 add TOML
+f3bbd4f9725a0a0917f01a9a8dded52682a436e2 explicitly checkout to tag provided in commit message
+f3cf78d0b765d6de9306f40b31d7d3352abbdc33 update get latest semver step
+e4ef702523aaa75f053b00f0b2fe7db27db424a1 get semver updated element
+9bdd5d7451fa7966f07b79585bb57e7c09288879 update branch name
+7a9573ba3ba674e1cc000f1b667b9acc16fefa46 add branch parameter for tag
+60aba273bbe1b046bfb103ead7198e549d562705 add token for checkout action
+d9b27a764b92397af1f14da6d1da9bc3cddd9a4e fix branch;add triggering commit on common-web
+a2e5b0f584075b78a54463ea727fab2995cad61c add build workflow
+bdb173998ed5babf152ef1522150215127cdb06b Change security treshold in security check
+9d799205ebf06da39b844a5fa662dcfcedf7956e Add template for security check (image check)
+d8bb735c0dda873f71a455b241e6ddb62309897a (tag: refs/tags/0.9.0) Update CHANGELOG.md for 0.9.0
+bdcd02355c1497a60ba725335cbd4d11518337ba Fix wrong userid for dinfo in image
+a3f804b730a0ad84522cdfb9cd146e6815dcc69f (tag: refs/tags/0.8.0) update libs
+79f12c7e315644f24495705e5710e0442bb8ea2c (tag: refs/tags/0.7.0) update libs + remove de_CH locales + add fr_CH locales
+be4df7b91173a795e8422a038b734f0564e9d010 update libs + remove de_CH locales + add fr_CH locales
+e327694e431314a40714600f90751d2ddcbc0222 (tag: refs/tags/0.6.0) Fixes the pack/unpack process and recovery of the token's content
+8df617168bbd349f4e6b3899f6d8cc7a145de96c (tag: refs/tags/0.5.0) new image for ipv6 handling
+cd41a8ab426685c3c7685582927037f88b1e37fb (tag: refs/tags/0.4.0) Adds dialog package / Masks interactive installations warnings
+c5deba5af16027cda6dc3e6175a902395823c0f0 Adds dialog package / Masks interactive installations warnings
+bb5d78c3f01afac2f09369deb5d9efe202ffe97c Adds apt-utils
+c959a3f025d9dcd9c4978c498bf2e4dfaa12f74c Adds apt-utils
+cc09d8c4dfabb38a73da5d4e9b20efac7d0f1fcf (tag: refs/tags/0.3.0) create v0.3.0 image
+396a046f165f4a4fc6631f6b88da50a17e0059a7 Fix typo in .dockerignore
+ecc99b6fb3395f5532d1dc9b6efa23350c3638ac Optimize Dockerfile for size
+f559ecfa9764affe1a8f4e18cb87d32d2389861a Sort cpanfile
+3923f8fcf9d25a47e0d816cee81865af4b047c76 (tag: refs/tags/accredv4) Fix DBD::Oracle issue adding required lib
+f9dc92ac4492bbb654818c9e662baaddd6f239b2 Update CHANGELOG for accredv4-0.3.0
+ae8f17237c4b955f51cc95eb4ab4ce9042736965 Update CHANGELOG for accredv4-0.2.0
+7412711655bbd903b7a56a6fe0814eba80e5b5db Add back use of cpanfile in Dockerfile
+bcaf5661f8af6660505c4e3179b0c037a36cc53a Add more information to build custom version (using non head commit)
+5eb50dec40df6c32b8faaae76d42e328b8862aa9 remove useless commented lines
+6a3f323c52b9e4b2860b9d2fb822cb548794cccd (tag: refs/tags/latest) update submodules to master
+f99b274c02ac4eb03c144baa403a87a306f524dc Merge pull request #1 from ponsfrilus/main
+275fa4f0cffc72bf9a101c8c5f1686e150c6f231 Update README.md with PAT's scope
+b47c8a12b341dcb041800421807c159d12ef4af9 Add link to github documentation about PAT
+060091870992de0ac186fb97997b9cd9dd0262c7 Update documentation about pushing image
+484f1e8b0d98934f4c84d6843cfdf3c45bee2d94 Fix typo in documentation
+4dba4299c8ff53d70662c2b267fcb964445c631e Update CHANGELOG for v0.2.0
+8931014e01c3744a70e92f58163ac5dbf7d14dab Add some documentation
+81030691739e1239a887f5b3dca8dd7543db3c2e Add .dockerignore
+27954bf11189b4df23a1291315914181fda3dc04 Add CHANGELOG.md
+261aecede34f55caca63f3610dba35ad7b40d389 Add conf/ and vendor/
+2bceb0aa6068cefefc06cf5378b88437374f3a64 Add Dockerfile
+466d4a34660f7b0ea676392fb7d7afd1b05de49e Add submodules
+b1c2d0f42a93c9280a3ce521422882712b022cc4 Initial commit
