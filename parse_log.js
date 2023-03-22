@@ -2,30 +2,13 @@ const fs = require('fs');
 
 var BreakException = {};
 
-// read tag file to get the latest one
-/*
-var tag = '';
-const tags = fs.readFileSync('git_tag.txt', 'utf-8');
-
-try {
-    tags.split(/\r?\n/).forEach((line) => {
-        //console.log("tag in git_tag.txt: ", line);
-        tag = line;
-        throw BreakException;
-    });
-} catch (e) {
-  if (e !== BreakException) throw e;
-}
-
-console.log("latest tag:", tag);
-*/
-
 // read logs
 const logs = fs.readFileSync('git_log.txt', 'utf-8');
 
 const tagRegex = /^\(tag: refs\/tags\/\d+\.\d+\.\d+\)/g;
 
 var actions = [];
+var tag;
 
 try {
     logs.split(/\r?\n/).forEach((line) => {
@@ -59,7 +42,8 @@ try {
   if (e !== BreakException) throw e;
 }
 
-if (actions.length > 0) {
+// if an existing tag was found and there are some actions
+if (tag && actions.length > 0) {
     // reverse actions
     actions = actions.reverse();
     console.log(actions);
@@ -93,6 +77,16 @@ if (actions.length > 0) {
         }
     });
 
+    fs.writeFile('newtag.txt', 'newtag='+newtag, err => {
+        if (err) {
+            console.error(err);
+        }
+    });
+}
+// default to 1.0.0
+else if (actions.length > 0) {
+    var newtag = '1.0.0';
+    console.log('newtag: ', newtag);
     fs.writeFile('newtag.txt', 'newtag='+newtag, err => {
         if (err) {
             console.error(err);
